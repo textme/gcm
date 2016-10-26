@@ -22,8 +22,8 @@ type Message struct {
 	Priority              string                 `json:"priority,omitempty"`
 }
 
-// NewMessage returns a new Message with the specified payload
+// NewMessage returns a new Message with the specified payload, priority
 // and registration IDs.
-func NewMessage(data map[string]interface{}, regIDs ...string) *Message {
-	return &Message{RegistrationIDs: regIDs, Data: data}
+func NewMessage(data map[string]interface{}, priority string, regIDs ...string) *Message {
+	return &Message{RegistrationIDs: regIDs, Data: data, Priority: priority}
 }
